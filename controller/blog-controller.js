@@ -42,3 +42,13 @@ export const CreateBlog = async (req, res) => {
     console.log("error", error);
   }
 };
+
+export const getBlogs = async (req, res) => {
+  try {
+    const blogs = await User.find().sort({ createdAt: -1 }); 
+    res.status(200).json(blogs);
+  } catch (error) {
+    console.log("Error:", error);
+    res.status(500).json({ message: "Internal Server Error", error });
+  }
+};

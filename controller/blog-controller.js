@@ -1,4 +1,4 @@
-import cloudinary from "../config/cloudinary.config.js.js";
+import cloudinary from "../config/cloudinary.config.js";
 import User from "../models/blog-model.js";
 
 const uploadImageToCloudinary = (fileBuffer, folder) => {

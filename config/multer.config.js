@@ -10,7 +10,6 @@ const storage = multer.diskStorage({
   },
 });
 
-// const upload = multer({ storage: storage }).single('image');
-const upload = multer({ storage: storage }).array("image", 10); // Allows up to 10 files
+const upload = multer({ storage: storage }).single("image");
 
 export { upload };

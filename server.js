@@ -8,7 +8,14 @@ import blogRoute from './routes/blog-route.js';
 const app = express();
 const port = process.env.PORT;
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+    defaultErrorHandler: false,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
 connectDB();
 app.use('/api', blogRoute);
